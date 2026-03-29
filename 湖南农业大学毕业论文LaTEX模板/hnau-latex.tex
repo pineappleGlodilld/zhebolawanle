@@ -1,0 +1,61 @@
+\documentclass[science]{hnau-thesis}
+
+\HNAUsetup{
+  ctitle = 本科论文版式模板设计,
+  etitle = Design of an Undergraduate Thesis Layout Template
+  author = 张三,
+  studentid = 202622010101,
+  gradeclass = 2022级数据科学与大数据技术（1）班,
+  advisor = 李四,
+  advisorwithtitle = 李四 教授,
+  college = 信息与智能科学技术学院,
+  ecollege = College of Information and Intelligence Science and Technology,
+  city = 长沙,
+  postcode = 410128,
+  submitdate = 2026年3月
+}
+
+\begin{document}
+
+\makecover
+\makestatement
+\maketoc
+
+\makeabstracts
+{本文根据学校毕业论文 Word 模板的封面、诚信声明、目录、摘要、正文和后置部分版式要求，构建了一个可直接复用的 LaTeX 模板。模板通过统一页边距、字体字号、标题层级和目录样式，实现了论文格式的稳定输出，并保留了对农理工科论文结构的默认支持。}
+{论文模板；LaTeX；版式复刻；毕业论文}
+{This template reproduces the layout requirements of the university Word thesis sample, including the cover page, declaration, table of contents, abstracts, body text, and back matter. It keeps the typography stable through unified margin settings, heading formats, and font control, and provides a practical starting point for science and engineering theses.}
+{thesis template; LaTeX; layout reproduction; undergraduate thesis}
+
+\section{前言}
+本文档用于演示湖南农业大学本科毕业论文模板的 LaTeX 写法。正文采用小四号字、固定值约 22 磅行距，中文使用宋体，英文使用 Times New Roman。模板默认提供封面、诚信声明、目录、摘要和后置部分命令，便于后续直接替换内容。
+
+\section{模板结构设计}
+\subsection{页面设置}
+模板将封面与声明页设置为上、下 2 厘米，左、右 2.6 厘米；将目录与正文设置为上、下 2.54 厘米，左、右 2.6 厘米，从而分别对应 Word 模板中的不同版心要求。
+
+\subsection{标题层级}
+一级标题使用小三号黑体，二级标题使用四号黑体，三级标题使用小四号黑体。农理工科采用阿拉伯数字编号。
+
+\subsubsection{正文示例}
+如确有需要，可以在正文中继续插入图、表、公式等内容，但应保持与模板规定一致的字体和行距风格。模板本身不强制扩展四级标题，以避免偏离原始格式要求。
+
+\section{结果与分析}
+通过将版式参数内聚到类文件中，用户只需填写题目、作者、学号、学院等元数据，并在示例文件基础上写作，即可获得稳定的排版结果。
+
+\section{讨论}
+由于原始附件是一个说明性质的 Word 模板而非最终成稿，本模板优先固化其显式给出的版式要求。对于 Word 文档中未明确写出的局部规则，例如页码显示位置，模板采用了常见且保守的底部居中阿拉伯数字方案。
+
+\section{结论}
+该模板实现了从 Word 说明模板到可复用 LaTeX 模板的转换，适合作为后续论文写作的基础工程。
+
+\begin{thebibliography}{99}
+\bibitem{ref1} 作者. 论文题名[J]. 期刊名, 2025, 10(2): 1-10.
+\bibitem{ref2} Author. Title of Article[J]. Journal Name, 2024, 8(1): 20-28.
+\end{thebibliography}
+
+\acknowledgements{本模板根据附件中的学校 Word 说明模板整理完成。若后续学院层面还有补充细则，可继续在类文件中做细部调整。}
+
+\appendixpage{附录1\quad 示例附录}{附录内容的字体字号参照正文格式要求。本页用于展示附录标题与正文内容的排版方式。}
+
+\end{document}
