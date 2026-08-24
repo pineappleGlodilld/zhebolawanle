@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "alibaba-cn/deepseek-v4-pro",
+  "small_model": "alibaba-cn/deepseek-v4-flash",
+  "subagent_depth": 3,
+  "mcp": {
+    "zotero": {
+      "type": "remote",
+      "url": "http://127.0.0.1:23120/mcp",
+      "enabled": true
+    }
+  },
+  "agent": {
+    "literature-absorber": {
+      "model": "alibaba-cn/deepseek-v4-pro",
+      "mode": "subagent",
+      "description": "深度阅读论文文献，提取结构化信息（研究问题、方法、发现、贡献、局限）。输入论文全文或段落，输出结构化摘要。",
+      "color": "#3B82F6",
+      "steps": 20
+    },
+    "literature-collector": {
+      "model": "alibaba-cn/deepseek-v4-flash",
+      "mode": "subagent",
+      "description": "自动搜索学术数据库，根据主题查找相关论文，评估相关性，输出精选文献列表含元数据。",
+      "color": "#10B981",
+      "steps": 30
+    },
+    "review-generator": {
+      "model": "alibaba-cn/deepseek-v4-pro",
+      "mode": "subagent",
+      "description": "基于文献摘要合成综述论文，组织逻辑框架，撰写连贯学术长文。",
+      "color": "#F59E0B",
+      "steps": 40
+    },
+    "polisher": {
+      "model": "alibaba-cn/qwen-max3.8",
+      "mode": "subagent",
+      "description": "润色学术文本，提升语言质量、学术语气、引用格式，优化行文流畅度。",
+      "color": "#8B5CF6",
+      "steps": 20
+    },
+    "auditor": {
+      "model": "alibaba-cn/deepseek-r1",
+      "mode": "subagent",
+      "description": "审定论文综述，事实核查、逻辑一致性检验、发现论证漏洞、确保学术严谨性。",
+      "color": "#EF4444",
+      "steps": 30
+    }
+  }
+}
